@@ -19,7 +19,7 @@ const ResetPassword = () => {
       }
 
     return (
-    <div className=' bg-blue-900 w-screen h-screen md:py-28 relative z-0'>
+    <div className=' md:bg-blue-900 w-screen h-screen md:py-28 relative z-0'>
        {showModal && <ResetPasswordModal/>}
        <div className='bg-white md:w-1/3 w-full mx-auto p-8  border  rounded '>
         <img src="https://lh3.googleusercontent.com/a-/AD_cMMRciwlvy5PAUC-vEBCceMdqH4Fe0pGRgCy-TqZd=s64-p-k-rw-no" alt="" />
