@@ -14,7 +14,7 @@ const LandingPage = () => {
         <img src="https://lh3.googleusercontent.com/a-/AD_cMMRciwlvy5PAUC-vEBCceMdqH4Fe0pGRgCy-TqZd=s64-p-k-rw-no" alt="" />
           <div
             onClick={() => setOpen(!open)}
-            className='text-violet-900 text-5xl cursor-pointer md:hidden absolute right-8 top-6 text-center'
+            className='text-blue-900 text-5xl cursor-pointer md:hidden absolute right-8 top-6 text-center'
           >
             <ion-icon name={open ? 'close' : 'menu'}></ion-icon>
           </div>
@@ -37,7 +37,7 @@ const LandingPage = () => {
           </Link>
         </div>
       </nav>
-      <div className='bg-blue-100  flex  md:flex-row flex-col justify-between w-full p-20 '>
+      <div className='bg-blue-100  flex  md:flex-row flex-col justify-between w-full md:p-20 p-8 '>
       <div className='md:w-1/2 w-full items-center my-auto font-bold'>
       <small className='text-[16px] mb-2'>Welcome to </small>
          <h1 className='text-5xl mb-6 '>Zap Logistic</h1>
