@@ -24,6 +24,8 @@ const Signup = () => {
   const [phoneNumber , setPhoneNumber] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
+  const [showPassword , setShowPassword] = useState(false);
+
 
   const navigate = useNavigate()
 
@@ -39,6 +41,11 @@ console.log(errors)
    }
    console.log(data)
   };
+
+  const toggle = () =>{
+    setShowPassword(!showPassword)
+  }
+
   return (
     <div className=' md:bg-blue-900 w-screen full md:py-8'>
        <div className='bg-white md:w-1/3 w-full mx-auto p-8  border  rounded '>
@@ -83,22 +90,22 @@ console.log(errors)
 
                   <br />
                 <label htmlFor="" className='text-lg'>Password</label><br /> 
-                <input type="password"  placeholder='Enter your Password'  
+                <input type={showPassword?"text":"password"}  placeholder='Enter your Password'  
                 className='caret-blue-400  mt-1 mb-4 border border-blue-100  rounded-lg w-full p-3 outline-none '
                 {...register("password")}
                 onChange={(e) => setPassword(e.target.value)}
 
-                /><AiOutlineEye className='relative bottom-12 right-4 float-right '/>
+                /><AiOutlineEye onClick={toggle} className='relative bottom-12 right-4 float-right cursor-pointer '/>
                   <span className=' text-red-600 mb-4'> {errors.password?.message}</span>
 
                 <br />
                 <label htmlFor="" className='text-lg'>Confirm Password</label> <br /> 
-                <input type="password"  placeholder='confirm your password' 
+                <input type={showPassword?"text":"password"}  placeholder='confirm your password' 
                  className='caret-blue-400  mt-1 mb-4 border border-blue-100 rounded-lg  w-full p-3 outline-none '
                  {...register("confirmPassword")}
                  onChange={(e) => setConfirmPassword(e.target.value)}
 
-                 /><AiOutlineEye className='relative bottom-12 right-4 float-right '/>
+                 /><AiOutlineEye  onClick={toggle} className='relative bottom-12 right-4 float-right cursor-pointer '/>
                  <span className=' text-red-600 mb-4'> {errors.confirmPassword?.message}</span> 
                  <br /> 
                 <input type="submit" value="Sign Up"  className=' cursor-pointer mt-1 mb-4 border border-blue-100 bg-blue-900 text-center text-white rounded-lg w-full p-3 outline-none hover:opacity-50' />

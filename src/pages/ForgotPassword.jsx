@@ -4,6 +4,7 @@ import { Link, useNavigate } from 'react-router-dom';
 
 const ForgotPassword = () => {
   const [email , setEmail] = useState("");
+
   const navigate = useNavigate()
   const handleSubmit = (e) =>{
     e.preventDefault();
@@ -12,6 +13,7 @@ const ForgotPassword = () => {
         navigate("/resetpassword")
        }
   };
+
 
   return (
     <div className=' md:bg-blue-900 w-screen h-screen md:py-28'>

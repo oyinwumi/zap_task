@@ -6,6 +6,8 @@ import { AiOutlineEye } from "react-icons/ai";
 const Login = () => {
   const [email , setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [showPassword , setShowPassword] = useState(false);
+
   const navigate = useNavigate()
 
 
@@ -15,6 +17,9 @@ const Login = () => {
       navigate("/dashboard")
    }
   };
+  const toggle = () =>{
+    setShowPassword(!showPassword)
+  }
 
   return (
     <div className=' md:bg-blue-900 w-screen h-screen md:py-28'>
@@ -29,11 +34,11 @@ const Login = () => {
 
             /><br />
           <label htmlFor="" className='text-lg'>Password</label><br /> 
-          <input type="password"  placeholder='Enter your Password' 
+          <input type={showPassword?"text":"password"}  placeholder='Enter your Password' 
            className='caret-blue-400  mt-1 mb-2 border border-blue-100  rounded-lg w-full p-3 outline-none ' 
            onChange={(e) => setPassword(e.target.value)}
 
-            /> <AiOutlineEye className='relative bottom-10 right-4 float-right '/><br />
+            /> <AiOutlineEye   onClick={toggle} className='relative bottom-10 right-4 float-right '/><br />
           <Link to="/forgotpassword" className='float-right mb-4 text-blue-900'>Forgot password?</Link>
           <input type="submit" value="Login"  className=' cursor-pointer mt-1 mb-4 border border-blue-100 bg-blue-900 text-center text-white rounded-lg w-full p-3 outline-none hover:opacity-50' />
           <p className='text-center'>Don't have an account? <Link to="/signup" className='text-blue-900 ml-1'>Sign Up</Link></p>
